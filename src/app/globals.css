@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Canela";
+  src: url("https://davidwhyte.com/wp-content/themes/davidwhyte/resources/assets/fonts/CanelaText-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("https://davidwhyte.com/wp-content/themes/davidwhyte/resources/assets/fonts/CanelaText-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("https://davidwhyte.com/wp-content/themes/davidwhyte/resources/assets/fonts/CanelaText-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("https://davidwhyte.com/wp-content/themes/davidwhyte/resources/assets/fonts/CanelaText-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roobert";
+  src: url("https://davidwhyte.com/wp-content/themes/davidwhyte/resources/assets/fonts/Roobert-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roobert";
+  src: url("https://davidwhyte.com/wp-content/themes/davidwhyte/resources/assets/fonts/Roobert-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roobert";
+  src: url("https://davidwhyte.com/wp-content/themes/davidwhyte/resources/assets/fonts/Roobert-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@theme {
+  --color-bg: #E1E1E1;
+  --color-bg-dark: #000000;
+  --color-text: #000000;
+  --color-text-light: #E1E1E1;
+  --color-text-muted: #6B6B6B;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-light: rgba(255, 255, 255, 0.1);
+
+  --font-sans: "Roobert", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Canela", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #000;
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* ── Watercolor canvas background ── */
+.xp-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: #000;
+}
+
+/* ── XP text styling ── */
+.xp-text {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* ── Advantages section ── */
+.advantages-section {
+  background: var(--color-bg);
+  position: relative;
+  z-index: 2;
+}
+
+/* ── FAQ ── */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-answer.open {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer>div {
+  overflow: hidden;
+}
+
+/* ── Separator line ── */
+.separator {
+  height: 1px;
+  background: var(--color-border);
+  width: 100%;
+}
+
+/* ── CTA button ── */
+.rect-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  color: inherit;
+}
+
+.rect-button:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.rect-button.white {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.rect-button.white:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ── Footer ── */
+footer {
+  background: #000;
+  color: #fff;
+}
